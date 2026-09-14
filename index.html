@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Linux Commands — Quick Reference</title>
+  <meta name="description"
+    content="A fast, mobile-friendly reference of 300+ Linux commands with man-page-style sections: synopsis, description, options, examples, and cross-references.">
+  <meta name="theme-color" content="#282828">
+  <script>
+    /* Apply the saved (or system) theme before first paint to avoid a flash. */
+    (function () {
+      var t = "dark";
+      try { t = localStorage.getItem("theme"); } catch (e) { /* private mode */ }
+      if (t !== "dark" && t !== "light") {
+        t = window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+      }
+      document.documentElement.setAttribute("data-theme", t);
+    })();
+  </script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/kaderjenengan.png">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%23282828'/%3E%3Ctext x='50' y='68' font-family='monospace' font-size='46' font-weight='bold' fill='%23fe8019' text-anchor='middle'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true">
+        <nav>
+          <a href="index.html">
+            <img id="kaderjenengan" src="icons/kaderjenengan.png" alt="kaderjenengan" width="55">
+          </a>
+        </nav>
+      </span>
+      <div>
+        <h1>Linux Commands</h1>
+        <p class="tagline" id="count-line">Loading database…</p>
+      </div>
+      <button id="lang-toggle" class="theme-toggle lang-toggle" type="button" title="Beralih ke Bahasa Indonesia"
+        aria-label="Beralih ke Bahasa Indonesia">ID</button>
+      <button id="install-btn" class="theme-toggle" type="button" title="Install app" aria-label="Install this app"
+        hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3v12"></path>
+          <path d="m7 10 5 5 5-5"></path>
+          <path d="M4 21h16"></path>
+        </svg>
+      </button>
+      <button id="theme-toggle" class="theme-toggle" type="button" title="Toggle light/dark theme"
+        aria-label="Toggle light or dark theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"></circle>
+          <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4">
+          </path>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="search-wrap">
+      <svg class="search-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m21 21-4.3-4.3"></path>
+      </svg>
+      <input id="search" type="search" placeholder="Search commands or descriptions…  ( / )"
+        aria-label="Search commands" autocomplete="off" autocapitalize="off" spellcheck="false">
+    </div>
+  </header>
+
+  <nav class="chips" id="chips" aria-label="Filter commands by category"></nav>
+
+  <main>
+    <section id="grid" class="grid" aria-live="polite"></section>
+    <div id="empty" class="empty hidden">
+      <p class="empty-big" id="empty-big">No commands found</p>
+      <p id="empty-hint">Try a different search term or category.</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p id="footer-note">Open-source reference — descriptions &amp; examples curated from man pages (coreutils,
+      util-linux, procps, iproute2, …). Tap a card for synopsis &amp; examples. Copyright &copy; 2026 Kader Jenengan.</p>
+  </footer>
+
+  <div id="backdrop" class="backdrop hidden" role="presentation">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button class="modal-close" id="modal-close" aria-label="Close details">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="data-part1.js"></script>
+  <script src="data-part2.js"></script>
+  <script src="man-part1.js"></script>
+  <script src="man-part2.js"></script>
+  <script src="man-part3.js"></script>
+  <script src="man-part4.js"></script>
+  <script src="man-part5.js"></script>
+  <script src="man-part6.js"></script>
+  <script src="ex-part1.js"></script>
+  <script src="ex-part2.js"></script>
+  <script src="ex-part3.js"></script>
+  <script src="examples-part1.js"></script>
+  <script src="examples-part2.js"></script>
+  <script src="examples-part3.js"></script>
+  <script src="i18n.js"></script>
+  <script src="id-part1.js"></script>
+  <script src="id-part2.js"></script>
+  <script src="id-part3.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

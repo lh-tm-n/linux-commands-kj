@@ -1,0 +1,24 @@
+{
+  "name": "linux-commands-reference",
+  "version": "1.0.0",
+  "description": "A fast, offline-capable, bilingual (EN/ID) single-page reference for 304 Linux commands with man-page-style detail views and 966 examples.",
+  "private": true,
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "test": "node test-app.js",
+    "validate": "node validate.js"
+  },
+  "devDependencies": {
+    "jsdom": "^29.1.1"
+  },
+  "keywords": [
+    "linux",
+    "commands",
+    "man-pages",
+    "reference",
+    "pwa",
+    "offline",
+    "indonesian",
+    "bahasa"
+  ]
+}
