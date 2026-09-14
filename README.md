@@ -133,4 +133,4 @@ mode additionally require a secure context (`https://` or `localhost`).
 
 ## License
 
-No license file yet — pick one (e.g. MIT) before publishing publicly.
+GNU GENERAL PUBLIC LICENSE Version 3.
